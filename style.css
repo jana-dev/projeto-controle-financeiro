@@ -5,6 +5,8 @@
 body{
     margin: 0px;
     font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 100%;
 }
 
 #cabecalho{
@@ -44,14 +46,14 @@ body{
 .formulario form{
     width: 90%;
     display: flex; 
-    margin-top: 26px;
+    margin-top: 10px;
     flex-direction: column;
 }
 
 .formulario form label{
-    padding: 5px 0px;
+    padding: 20px 0px 5px 0px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     color: #333333;
     line-height: 22px;
 }
@@ -68,7 +70,7 @@ body{
     height: 32px;
     border-radius: 4px;
     border: 1px solid #979797;
-    padding: 0px 5px;
+    padding: 0px 10px;
     color: #888888;
 }
 .formulario form input[type=number]{
@@ -89,4 +91,79 @@ body{
     width: 90%;
     height: 1px;
     background-color: #979797;
+}
+
+.tabela-extrato{
+    display: flex;
+    flex-direction: column;
+    margin-top: 41px;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.tabela-extrato table{
+    margin-top: 19px;
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+
+.linha-simples-separadora td{
+    border-bottom: 1px solid #979797;
+    padding: 0px;
+}
+
+.cabecalho-tabela{
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 0px;
+}
+.conteudo-tabela{
+    padding: 8px 0px;
+    width: 200px;
+    line-height: 16px;
+}
+#espaco-linhadupla{
+    padding: 1px;
+}
+.total{
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    padding-left: 15px;
+}
+.lucro{
+    font-size: 10px;
+    font-weight: 400;
+    padding-top: 0px;
+    text-align: right;
+    padding-right: 10px;
+    
+}
+.alinhamento-esquerdo{
+    text-align: left;
+    padding-left: 11px;
+}
+.alinhamento-direito{
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: baseline;
+    padding-top: 7px;
+}
+.espaco-simbolo{
+    padding-left: 10px;
+    text-align: center;
+}
+#cabecalho-tabela-valor{
+    padding-right: 42px;
+}
+
+
+.footer{
+    border: 6px solid  #333333;
+    width: 400px;  
+    position: absolute;
+    bottom: 0;
 }
