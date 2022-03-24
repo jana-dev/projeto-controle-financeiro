@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+body{
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+#cabecalho{
+    display: flex;
+    background-color: #E0E0E0;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+  margin-left: 21px;
+}
+.titulo{
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 24px;
+    color: #333333;
+}
+.menuHamburguer{
+    margin-right: 21px;
+}
+.menuHamburguer div{
+    width: 18px;
+    height: 2px;
+    background-color: #333333;
+    margin-bottom: 3px;
+
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.formulario form{
+    width: 90%;
+    display: flex; 
+    margin-top: 26px;
+    flex-direction: column;
+}
+
+.formulario form label{
+    padding: 5px 0px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 22px;
+}
+
+.formulario form select{
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    padding: 0px 5px;
+    color: #888888;
+}
+
+.formulario form input[type=text],[type=number]{
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    padding: 0px 5px;
+    color: #888888;
+}
+.formulario form input[type=number]{
+    font-family: 'Inter', sans-serif;
+}
+.formulario form input[type=submit]{
+    margin-top: 19.78px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    border: none;
+}
+.linha{
+    margin: 0 auto;
+    margin-top: 28.56px;
+    width: 90%;
+    height: 1px;
+    background-color: #979797;
+}
