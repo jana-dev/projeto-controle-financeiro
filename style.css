@@ -9,6 +9,11 @@ body {
   height: 100%;
 }
 
+main{
+  width: 100%;
+
+}
+
 #cabecalho {
   padding: 0px 20px;
   width: 100%;
@@ -75,6 +80,9 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .formulario form {
@@ -82,6 +90,11 @@ body {
   display: flex;
   margin-top: 10px;
   flex-direction: column;
+}
+
+.formulario h2{
+  margin-top: 20px;
+  display: none;
 }
 
 .formulario form label {
@@ -193,8 +206,24 @@ body {
 }
 
 .footer {
-  border: 6px solid #333333;
+  border: 4px solid #333333;
   width: 100%;
   position: absolute;
   bottom: 0;
+}
+
+
+@media (min-width: 768px){
+
+
+#menu-conteiner {
+  width: 35%;
+}
+
+.formulario h2{
+  display: block;
+}
+
+
+
 }

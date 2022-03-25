@@ -44,20 +44,28 @@
     <main class="conteudo-principal">
 
         <section class="formulario">
+            <h2>Nova transação</h2>
             <form>
-                <label for="transacao">Tipo de transação</label>
-                <select name="transacao" id="transacao">
+                
+                    <label for="transacao">Tipo de transação</label>
+                    <select name="transacao" id="transacao">
                     <option value="compra">Compra</option>
                     <option value="venda">Venda</option>
-                </select>
+                    </select>
+             
+             
+                    <label for="nomeMercadoria">Nome da mercadoria</label>
+                    <input type="text" name="nomeMercadoria" id="nomeMercadoria">   
+           
 
-                <label for="nomeMercadoria">Nome da mercadoria</label>
-                <input type="text" name="nomeMercadoria" id="nomeMercadoria">
+           
+                    <label for="valor">Valor</label>
+                    <input type="number" name="valor" id="valor" placeholder="R$ 0,00">
+            
 
-                <label for="valor">Valor</label>
-                <input type="number" name="valor" id="valor" placeholder="R$ 0,00">
-
-                <input type="submit" value="Adicionar transação">
+             
+                    <input type="submit" value="Adicionar transação">
+         
 
             </form>
 
@@ -146,15 +154,6 @@
 
         <div class="footer"></div>
     </main>
-
-    <!--<script>
-        function openNav(){
-            document.getElementById("mySidepanel").style.width = "250px";
-        }
-        function closeNav(){
-            document.getElementById("mySidepanel").style.width = "0";
-        }
-    </script>-->
 
     <script>
         function abrirMenu() {
