@@ -26,6 +26,10 @@
         </div>
         <!---->
         <div onclick="abrirMenu()" id="abrirMenu" class="icon-menu">
+
+           
+
+
             <span></span>
             <span></span>
             <span></span>
@@ -44,31 +48,33 @@
     <main class="conteudo-principal">
 
         <section class="formulario">
-            <h2>Nova transação</h2>
-            <form>
-                
-                    <label for="transacao">Tipo de transação</label>
-                    <select name="transacao" id="transacao">
-                    <option value="compra">Compra</option>
-                    <option value="venda">Venda</option>
+                <h2>Nova transação</h2>
+                <form>
+                    <div class="transacao">
+                        <label for="transacao">Tipo de transação</label>
+                        <select name="transacao" id="transacao">
+                        <option value="compra">Compra</option>
+                        <option value="venda">Venda</option>
                     </select>
-             
-             
-                    <label for="nomeMercadoria">Nome da mercadoria</label>
-                    <input type="text" name="nomeMercadoria" id="nomeMercadoria">   
-           
+                    </div>
 
-           
-                    <label for="valor">Valor</label>
-                    <input type="number" name="valor" id="valor" placeholder="R$ 0,00">
-            
-
-             
-                    <input type="submit" value="Adicionar transação">
-         
-
-            </form>
-
+                    <div class="nome-mercadoria">
+                        <label for="nomeMercadoria">Nome da mercadoria</label>
+                        <input type="text" name="nomeMercadoria" id="nomeMercadoria" placeholder="Input"> 
+                    </div>
+                    
+    
+                    <div class="valor">
+                        <label for="valor">Valor</label>
+                        <input type="number" name="valor" id="valor" placeholder="R$ 0,00">
+                    </div>
+                      
+                    
+                    <div class="menu-adicionar">
+                        <input type="submit" value="Adicionar transação">
+                    </div>
+                    
+                </form>
         </section>
 
         <div class="linha"></div>
