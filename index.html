@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>Controle Financeiro</title>
 </head>
+
 <body>
-   
+
     <header id="cabecalho">
         <div class="logo">
             <img src="./img/logo.png" alt="Logo com icones geométricos" width="30px" height="27.63">
@@ -22,20 +24,20 @@
         <div class="titulo">
             <h1>Controle financeiro</h1>
         </div>
-        <div class="menuHamburguer">
-
-            <div id="mySidepanel" class="sidepanel">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-                <a href="#">Dashboard</a>
-                <a href="#">Resumo</a>
+        <!---->
+        <div onclick="abrirMenu()" id="abrirMenu" class="icon-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="menu-conteiner">
+            <div id="fecharMenu" onclick="fecharMenu()">
+                <img src="./img/fecharMenu.png" alt="Icone de xís para fechar menu">
             </div>
-            <div class="openbtn" onclick="openNav()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            
-
+            <ul id="menu">
+                <li>Cadastro de transações</li>
+                <li>Limpar dados</li>
+            </ul>
         </div>
     </header>
 
@@ -48,13 +50,13 @@
                     <option value="compra">Compra</option>
                     <option value="venda">Venda</option>
                 </select>
-    
+
                 <label for="nomeMercadoria">Nome da mercadoria</label>
                 <input type="text" name="nomeMercadoria" id="nomeMercadoria">
-    
+
                 <label for="valor">Valor</label>
                 <input type="number" name="valor" id="valor" placeholder="R$ 0,00">
-    
+
                 <input type="submit" value="Adicionar transação">
 
             </form>
@@ -85,7 +87,7 @@
                     <td class="conteudo-tabela alinhamento-esquerdo">
                         Donec dictum ipsum non arcu mollis
                     </td>
-                    <td class="alinhamento-direito" >
+                    <td class="alinhamento-direito">
                         R$ 12.999,99
                     </td>
                 </tr>
@@ -97,7 +99,7 @@
                     <td class="conteudo-tabela alinhamento-esquerdo">
                         Lorem ipsum dolor
                     </td>
-                    <td class="alinhamento-direito" >
+                    <td class="alinhamento-direito">
                         R$ 99,99
                     </td>
                 </tr>
@@ -109,7 +111,7 @@
                     <td class="conteudo-tabela alinhamento-esquerdo">
                         Lorem ipsum
                     </td>
-                    <td class="alinhamento-direito" >
+                    <td class="alinhamento-direito">
                         R$ 9,99
                     </td>
                 </tr>
@@ -131,29 +133,39 @@
                 <tr>
                     <td></td>
                     <td>
-                        
+
                     </td>
                     <td class="lucro">
                         [LUCRO]
                     </td>
                 </tr>
             </table>
-            
+
         </section>
         <!--fim tabela extrato-->
 
-        <div class="footer"></div>       
+        <div class="footer"></div>
     </main>
-    
-    
-    <script>
+
+    <!--<script>
         function openNav(){
             document.getElementById("mySidepanel").style.width = "250px";
         }
         function closeNav(){
             document.getElementById("mySidepanel").style.width = "0";
         }
+    </script>-->
+
+    <script>
+        function abrirMenu() {
+            document.getElementById("menu-conteiner").style.display = "block";
+        }
+        function fecharMenu() {
+            document.getElementById("menu-conteiner").style.display = "none";
+        }
     </script>
 
+
 </body>
+
 </html>

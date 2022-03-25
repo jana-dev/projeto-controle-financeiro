@@ -1,218 +1,200 @@
-*{
-    box-sizing: border-box;
-    margin: 0px;
+* {
+  box-sizing: border-box;
+  margin: 0px;
 }
-body{
-    margin: 0px;
-    font-family: 'Lato', sans-serif;
-    width: 100%;
-    height: 100%;
-}
-
-#cabecalho{
-    display: flex;
-    background-color: #E0E0E0;
-    height: 60px;
-    align-items: center;
-    justify-content: space-between;
+body {
+  margin: 0px;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
-.logo{
-  margin-left: 21px;
-}
-.titulo{
-    font-weight: 500;
-    font-size: 9px;
-    line-height: 24px;
-    color: #333333;
-}
-.menuHamburguer{
-    margin-right: 21px;
-}
-.menuHamburguer div{
-    width: 18px;
-    height: 2px;
-    margin-bottom: 3px;
-
+#cabecalho {
+  padding: 0px 20px;
+  width: 100%;
+  display: flex;
+  background-color: #e0e0e0;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.sidepanel  {
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    height: 250px;
-    top: 0;
-    right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
+.titulo {
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 24px;
+  color: #333333;
+}
+
+.icon-menu span {
+  display: block;
+  margin-bottom: 3px;
+  width: 18px;
+  height: 2px;
+  background: #333333;
+}
+
+#menu-conteiner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  height: 100vh;
+  background-color: #333333;
+  z-index: 5;
+  display: none;
+}
+
+#menu{
+  list-style-type: none;
+  padding: 62px 0px;
   
-  .sidepanel a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
+}
+
+#menu li {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  text-align: right;
+  z-index: 6;
   
-  .sidepanel a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidepanel .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-  
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-
-  .openbtn div {
-      background-color: #586489;
-  }
-  
-  .openbtn:hover {
-    background-color:#444;
-  }
-
-
-
-.formulario{
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
+}
+#menu li:hover{
+  background-color: #C4C4C4;
+  color: #333333;
+  font-weight: 600;
 }
 
-.formulario form{
-    width: 90%;
-    display: flex; 
-    margin-top: 10px;
-    flex-direction: column;
+#fecharMenu{
+  color:#fff ;
+  margin: 20px;
+  font-size: 25px;
 }
 
-.formulario form label{
-    padding: 20px 0px 5px 0px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333333;
-    line-height: 22px;
+.formulario {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.formulario form select{
-    height: 32px;
-    border-radius: 4px;
-    border: 1px solid #979797;
-    padding: 0px 5px;
-    color: #888888;
+.formulario form {
+  width: 90%;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
 }
 
-.formulario form input[type=text],[type=number]{
-    height: 32px;
-    border-radius: 4px;
-    border: 1px solid #979797;
-    padding: 0px 10px;
-    color: #888888;
-}
-.formulario form input[type=number]{
-    font-family: 'Inter', sans-serif;
-}
-.formulario form input[type=submit]{
-    margin-top: 19.78px;
-    height: 32px;
-    border-radius: 4px;
-    background-color: #333333;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    border: none;
-}
-.linha{
-    margin: 0 auto;
-    margin-top: 28.56px;
-    width: 90%;
-    height: 1px;
-    background-color: #979797;
+.formulario form label {
+  padding: 20px 0px 5px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 22px;
 }
 
-.tabela-extrato{
-    display: flex;
-    flex-direction: column;
-    margin-top: 41px;
-    justify-content: center;
-    align-items: center;
-   
+.formulario form select {
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #979797;
+  padding: 0px 5px;
+  color: #888888;
 }
 
-.tabela-extrato table{
-    margin-top: 19px;
-    width: 90%;
-    border-collapse: collapse;
-    font-size: 14px;
+.formulario form input[type="text"],
+[type="number"] {
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #979797;
+  padding: 0px 10px;
+  color: #888888;
+}
+.formulario form input[type="number"] {
+  font-family: "Inter", sans-serif;
+}
+.formulario form input[type="submit"] {
+  margin-top: 19.78px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: #333333;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  border: none;
+}
+.linha {
+  margin: 0 auto;
+  margin-top: 28.56px;
+  width: 90%;
+  height: 1px;
+  background-color: #979797;
 }
 
-
-.linha-simples-separadora td{
-    border-bottom: 1px solid #979797;
-    padding: 0px;
+.tabela-extrato {
+  display: flex;
+  flex-direction: column;
+  margin-top: 41px;
+  justify-content: center;
+  align-items: center;
 }
 
-.cabecalho-tabela{
-    font-weight: 600;
-    font-size: 14px;
-    padding: 5px 0px;
-}
-.conteudo-tabela{
-    padding: 8px 0px;
-    width: 200px;
-    line-height: 16px;
-}
-#espaco-linhadupla{
-    padding: 1px;
-}
-.total{
-    padding-top: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    padding-left: 15px;
-}
-.lucro{
-    font-size: 10px;
-    font-weight: 400;
-    padding-top: 0px;
-    text-align: right;
-    padding-right: 10px;
-    
-}
-.alinhamento-esquerdo{
-    text-align: left;
-    padding-left: 11px;
-}
-.alinhamento-direito{
-    text-align: right;
-    padding-right: 10px;
-    vertical-align: baseline;
-    padding-top: 7px;
-}
-.espaco-simbolo{
-    padding-left: 10px;
-    text-align: center;
-}
-#cabecalho-tabela-valor{
-    padding-right: 42px;
+.tabela-extrato table {
+  margin-top: 19px;
+  width: 90%;
+  border-collapse: collapse;
+  font-size: 14px;
 }
 
-.footer{
-    border: 6px solid  #333333;
-    width: 400px;  
-    position: absolute;
-    bottom: 0;
+.linha-simples-separadora td {
+  border-bottom: 1px solid #979797;
+  padding: 0px;
+}
+
+.cabecalho-tabela {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 0px;
+}
+.conteudo-tabela {
+  padding: 8px 0px;
+  width: 200px;
+  line-height: 16px;
+}
+#espaco-linhadupla {
+  padding: 1px;
+}
+.total {
+  padding-top: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 15px;
+}
+.lucro {
+  font-size: 10px;
+  font-weight: 400;
+  padding-top: 0px;
+  text-align: right;
+  padding-right: 10px;
+}
+.alinhamento-esquerdo {
+  text-align: left;
+  padding-left: 11px;
+}
+.alinhamento-direito {
+  text-align: right;
+  padding-right: 10px;
+  vertical-align: baseline;
+  padding-top: 7px;
+}
+.espaco-simbolo {
+  padding-left: 10px;
+  text-align: center;
+}
+#cabecalho-tabela-valor {
+  padding-right: 42px;
+}
+
+.footer {
+  border: 6px solid #333333;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
