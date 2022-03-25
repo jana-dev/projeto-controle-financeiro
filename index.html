@@ -23,9 +23,19 @@
             <h1>Controle financeiro</h1>
         </div>
         <div class="menuHamburguer">
-            <div></div>
-            <div></div>
-            <div></div>
+
+            <div id="mySidepanel" class="sidepanel">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+                <a href="#">Dashboard</a>
+                <a href="#">Resumo</a>
+            </div>
+            <div class="openbtn" onclick="openNav()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            
+
         </div>
     </header>
 
@@ -136,7 +146,14 @@
     </main>
     
     
-
+    <script>
+        function openNav(){
+            document.getElementById("mySidepanel").style.width = "250px";
+        }
+        function closeNav(){
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+    </script>
 
 </body>
 </html>
