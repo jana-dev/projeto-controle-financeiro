@@ -18,36 +18,44 @@
 <body>
 
     <header id="cabecalho">
-        <div class="logo">
-            <img src="./img/logo.png" alt="Logo com icones geométricos" width="30px" height="27.63">
-        </div>
-        <div class="titulo">
-            <h1>Controle financeiro</h1>
-        </div>
-        <!---->
-        <div onclick="abrirMenu()" id="abrirMenu" class="icon-menu">
-
-           
-
-
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div id="menu-conteiner">
-            <div id="fecharMenu" onclick="fecharMenu()">
-                <img src="./img/fecharMenu.png" alt="Icone de xís para fechar menu">
+        <div class="conteudo-cabecalho">
+            <div class="logo">
+                <img src="./img/logo.png" alt="Logo com icones geométricos" width="30px" height="27.63">
             </div>
-            <ul id="menu">
-                <li>Cadastro de transações</li>
-                <li>Limpar dados</li>
-            </ul>
+            <div class="titulo">
+                <h1>Controle financeiro</h1>
+            </div>
+        
+
+            <div onclick="abrirMenu()" id="abrirMenu" class="icon-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="menu-conteiner">
+                <div id="fecharMenu" onclick="fecharMenu()">
+                    <img src="./img/fecharMenu.png" alt="Icone de xís para fechar menu">
+                </div>
+                <ul id="menu">
+                    <li>Cadastro de transações</li>
+                    <li>Limpar dados</li>
+                </ul>
+            </div>
+            <div class="menu-desktop">
+                <ul>
+                    <li>Cadastro de transações</li>
+                    <li id="espaco-menu-desktop">Limpar dados</li>
+                </ul>
+            </div>
         </div>
+            
+
+        
     </header>
 
     <main class="conteudo-principal">
-
-        <section class="formulario">
+        <div class="formulario-tabela">
+            <section class="formulario">
                 <h2>Nova transação</h2>
                 <form>
                     <div class="transacao">
@@ -157,6 +165,9 @@
 
         </section>
         <!--fim tabela extrato-->
+        </div>
+
+        
 
         <div class="footer"></div>
     </main>

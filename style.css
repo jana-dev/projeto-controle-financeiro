@@ -9,19 +9,30 @@ body {
   height: 100%;
 }
 
-main{
+main {
   width: 100%;
-
 }
 
 #cabecalho {
   padding: 0px 20px;
   width: 100%;
-  display: flex;
   background-color: #e0e0e0;
   height: 60px;
-  align-items: center;
+}
+
+.conteudo-cabecalho{
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.menu-desktop {
+  display: none;
+}
+
+.menu-desktop ul li{
+  cursor: pointer;
 }
 
 .titulo {
@@ -50,10 +61,9 @@ main{
   display: none;
 }
 
-#menu{
+#menu {
   list-style-type: none;
   padding: 62px 0px;
-  
 }
 
 #menu li {
@@ -62,45 +72,50 @@ main{
   color: #fff;
   text-align: right;
   z-index: 6;
-  
 }
-#menu li:hover{
-  background-color: #C4C4C4;
+#menu li:hover {
+  background-color: #c4c4c4;
   color: #333333;
   font-weight: 600;
 }
 
-#fecharMenu{
-  color:#fff ;
+#fecharMenu {
+  color: #fff;
   margin: 20px;
   font-size: 25px;
 }
 
+.formulario-tabela{
+  display: flex;
+  flex-direction: column;
+}
 
-.formulario{
+.formulario {
   display: flex;
   justify-content: center;
   margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
+  width: 100%;
 }
 
-.formulario  form {
-  width: 90%;
+.formulario form {
+  width: 100%;
+  padding: 0px 20px;
   display: flex;
   margin-top: 10px;
   flex-direction: column;
-
 }
 
-.formulario form .transacao, .nome-mercadoria, .valor{
+.formulario form .transacao,
+.nome-mercadoria,
+.valor {
   display: flex;
   flex-direction: column;
 }
 
-.formulario h2{
+.formulario h2 {
   margin-top: 20px;
   display: none;
 }
@@ -141,6 +156,7 @@ main{
   color: #fff;
   font-family: "Inter", sans-serif;
   border: none;
+  cursor: pointer;
 }
 .linha {
   margin: 0 auto;
@@ -221,162 +237,231 @@ main{
   bottom: 0;
 }
 
+@media (min-width: 768px) {
+  #menu-conteiner {
+    width: 35%;
+  }
 
-@media (min-width: 768px){
+  .formulario-tabela{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
 
-
-#menu-conteiner {
-  width: 35%;
-}
-
-.formulario h2{
-  display: block;
-}
-
-.formulario{
-  border: 1px solid #979797;
-  margin: 20px;
-  border-radius: 4px;
-}
-
-.menu-adicionar{
-  display: flex;
-  align-items: center;
-  justify-content: end;
-}
-
-.formulario form .menu-adicionar input[type="submit"] {
-  
-  width: 200px;
-  margin-bottom: 20px;
-}
-.formulario form .menu-adicionar{
-  width: 100%;
-  text-align: end;
-}
-
-.formulario form .transacao{
-    width: 20%;
-    margin-right: 20px;
-}
-.formulario form .nome-mercadoria{
-  width: 54%;
-  margin-right: 20px;
-}
-.formulario form .valor{
-  width: 20%;
-}
-
-.formulario form{
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 95%;
-}
-
-.linha{
-  display: none;
-}
-
-.espaco-simbolo {
-  padding-left: 0px;
-
-}
-.alinhamento-esquerdo {
-  padding-left: 0px;
-}
-#cabecalho-tabela-valor {
-  padding-right: 20px; 
-}
-.alinhamento-direito{
-  padding-right: 20px;
-}
-.lucro{
-  padding-right: 20px;
-}
-
-
-
-
-}
-
-
-@media (min-width: 1112px){
-
-  .formulario h2{
+  .formulario h2 {
     display: block;
   }
-  
-  .formulario{
+
+  .formulario {
     border: 1px solid #979797;
-    margin: 20px;
     border-radius: 4px;
-    width: 40%;
+    width: 100%;
   }
 
-  .menu-adicionar{
+  .menu-adicionar {
     display: flex;
     align-items: center;
-  
+    justify-content: end;
   }
 
-  
-  .formulario form .menu-adicionar{
+  .formulario form .menu-adicionar input[type="submit"] {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .formulario form .menu-adicionar {
     width: 100%;
+    text-align: end;
   }
-  
-  .formulario form .transacao{
-      width: 100%;
-    
+
+  .formulario form .transacao {
+    width: 20%;
+    margin-right: 20px;
   }
-  .formulario form .nome-mercadoria{
+  .formulario form .nome-mercadoria {
+    width: 54%;
+    margin-right: 20px;
+  }
+  .formulario form .valor {
+    width: 20%;
+  }
+
+  .formulario form {
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-   
+    justify-content: space-between;
   }
-  .formulario form .valor{
-    width: 100%;
-  }
-  
-  .formulario form{
-      display: flex;
-      flex-direction: column;
-      width: 90%;
-  }
-  
-  .linha{
+
+  .linha {
     display: none;
   }
-  
+
+  .espaco-simbolo {
+    padding-left: 0px;
+  }
+  .alinhamento-esquerdo {
+    padding-left: 0px;
+  }
+  #cabecalho-tabela-valor {
+    padding-right: 20px;
+  }
+  .alinhamento-direito {
+    padding-right: 20px;
+  }
+  .lucro {
+    padding-right: 20px;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+  .tabela-extrato table{
+    width: 100%;
+  }
+}
+
+@media (min-width: 1112px) {
+
+  .formulario-tabela{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .formulario h2 {
+    display: block;
+  }
+
+  .formulario {
+    border: 1px solid #979797;
+    border-radius: 4px;
+    width: 400px;
+  }
+
+  .menu-adicionar {
+    display: flex;
+    align-items: center;
+  }
+
+  .formulario form .menu-adicionar {
+    width: 100%;
+  }
+
+  .formulario form .transacao {
+    width: 100%;
+  }
+  .formulario form .nome-mercadoria {
+    width: 100%;
+  }
+  .formulario form .valor {
+    width: 100%;
+  }
+
+  .formulario form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .linha {
+    display: none;
+  }
+
   .espaco-simbolo {
     padding-left: 10px;
-  
   }
   .alinhamento-esquerdo {
     padding-left: 11px;
   }
   #cabecalho-tabela-valor {
-    padding-right: 10px; 
-  }
-  .alinhamento-direito{
     padding-right: 10px;
   }
-  .lucro{
+  .alinhamento-direito {
+    padding-right: 10px;
+  }
+  .lucro {
     padding-right: 10px;
   }
 
-  .tabela-extrato{
-    width: 55%;
+  .tabela-extrato {
+    width: 652px;
+    padding-left: 20px;
   }
 
-  .icon-menu{
+  .icon-menu {
     display: none;
   }
-  main{
+  main {
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
   .formulario form .menu-adicionar input[type="submit"] {
     margin-bottom: 20px;
     width: 100%;
+  }
+
+  #cabecalho {
+    height: 80px;
+    justify-content: center;
+    display: flex;
+  }
+
+  .conteudo-cabecalho {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    height: 80px;
+    padding: 0px 20px;
 }
+
+  #cabecalho h1 {
+    margin-left: 20px;
+  }
+
+  .menu-desktop {
+    display: block;
+    margin-left: auto;
+    top: 20px;
+    right: 40px;
+  }
+
+  .menu-desktop ul {
+    list-style-type: none;
+    background-color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333333;
+    font-weight: 600;
+  }
+
+  .menu-desktop ul li {
+    display: inline;
+    padding: 8px 0px;
+  }
+  li:before {
+    content: "|";
+    color: #979797;
+    margin: 0px 20px 0px 15px;
+  }
+  li:first-child:before {
+    content: none;
+  }
+
+  #espaco-menu-desktop {
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 1500px) {
+  main {
+    justify-content: center;
+  }
+
+  #cabecalho
+
+
+
+  
 
 }
