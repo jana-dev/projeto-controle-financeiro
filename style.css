@@ -2,8 +2,8 @@
   box-sizing: border-box;
   margin: 0px;
 }
+
 body {
-  margin: 0px;
   font-family: "Lato", sans-serif;
   width: 100%;
   height: 100%;
@@ -13,44 +13,34 @@ main {
   width: 100%;
 }
 
+/*Estilização cabeçalho, logo titulo e menu hamburguer*/
 #cabecalho {
   padding: 0px 20px;
   width: 100%;
   background-color: #e0e0e0;
   height: 60px;
 }
-
 .conteudo-cabecalho{
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
 }
-
-.menu-desktop {
-  display: none;
-}
-
-.menu-desktop ul li{
-  cursor: pointer;
-}
-
 .titulo {
   font-weight: 500;
   font-size: 9px;
   line-height: 24px;
   color: #333333;
 }
-
-.icon-menu span {
+.icon-menu span { /*Criação dos 3 riscos do menu hamburguer*/
   display: block;
   margin-bottom: 3px;
   width: 18px;
   height: 2px;
   background: #333333;
+  cursor: pointer;
 }
-
-#menu-conteiner {
+#menu-conteiner { /*Criação do container escuro para o menu mobile*/
   position: absolute;
   top: 0;
   right: 0;
@@ -60,36 +50,37 @@ main {
   z-index: 5;
   display: none;
 }
-
-#menu {
+#menu { /*Estilo da ul*/
   list-style-type: none;
-  padding: 62px 0px;
+  padding: 0px;
 }
-
 #menu li {
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
   text-align: right;
   z-index: 6;
+  cursor: pointer;
 }
 #menu li:hover {
   background-color: #c4c4c4;
   color: #333333;
   font-weight: 600;
 }
-
 #fecharMenu {
   color: #fff;
   margin: 20px;
   font-size: 25px;
+  cursor: pointer;
 }
+/*Estilização cabeçalho, logo titulo e menu hamburguer*/
 
+
+/*Estilização do formulário até o botão adicionar transação*/
 .formulario-tabela{
   display: flex;
   flex-direction: column;
 }
-
 .formulario {
   display: flex;
   justify-content: center;
@@ -99,7 +90,6 @@ main {
   align-items: center;
   width: 100%;
 }
-
 .formulario form {
   width: 100%;
   padding: 0px 20px;
@@ -107,19 +97,16 @@ main {
   margin-top: 10px;
   flex-direction: column;
 }
-
 .formulario form .transacao,
 .nome-mercadoria,
 .valor {
   display: flex;
   flex-direction: column;
 }
-
-.formulario h2 {
+.formulario h2 { /*H2 que aparce somente no tablet e desktop*/
   margin-top: 20px;
   display: none;
 }
-
 .formulario form label {
   padding: 20px 0px 5px 0px;
   font-size: 14px;
@@ -127,7 +114,6 @@ main {
   color: #333333;
   line-height: 22px;
 }
-
 .formulario form .transacao select {
   height: 32px;
   border-radius: 4px;
@@ -135,7 +121,6 @@ main {
   padding: 0px 5px;
   color: #888888;
 }
-
 .formulario form input[type="text"],
 [type="number"] {
   height: 32px;
@@ -158,6 +143,9 @@ main {
   border: none;
   cursor: pointer;
 }
+/*Estilização do formulário até o botão adicionar transação*/
+
+/*Linha que separa o formulário da tabela*/
 .linha {
   margin: 0 auto;
   margin-top: 28.56px;
@@ -165,27 +153,26 @@ main {
   height: 1px;
   background-color: #979797;
 }
+/*Linha que separa o formulário da tabela*/
 
-.tabela-extrato {
+/*Titulo e conteudos da table*/
+.tabela-extrato { /*Alinha o conteudo do titulo com a table*/
   display: flex;
   flex-direction: column;
   margin-top: 41px;
   justify-content: center;
   align-items: center;
 }
-
 .tabela-extrato table {
   margin-top: 19px;
   width: 90%;
   border-collapse: collapse;
   font-size: 14px;
 }
-
 .linha-simples-separadora td {
   border-bottom: 1px solid #979797;
   padding: 0px;
 }
-
 .cabecalho-tabela {
   font-weight: 600;
   font-size: 14px;
@@ -229,13 +216,16 @@ main {
 #cabecalho-tabela-valor {
   padding-right: 42px;
 }
+/*Titulo e conteudos da table*/
 
+/*Linha fina preta no final da página*/
 .footer {
   border: 4px solid #333333;
   width: 100%;
   position: absolute;
   bottom: 0;
 }
+/*Linha fina preta no final da página*/
 
 @media (min-width: 768px) {
   #menu-conteiner {
@@ -250,6 +240,7 @@ main {
 
   .formulario h2 {
     display: block;
+    font-size: 18px;
   }
 
   .formulario {
@@ -341,7 +332,7 @@ main {
     display: flex;
     align-items: center;
   }
-
+  
   .formulario form .menu-adicionar {
     width: 100%;
   }
@@ -359,7 +350,7 @@ main {
   .formulario form {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
   }
 
   .linha {
@@ -385,7 +376,10 @@ main {
   .tabela-extrato {
     width: 652px;
     padding-left: 20px;
+    justify-content: start;
+    margin-top: 32px;
   }
+  
 
   .icon-menu {
     display: none;
@@ -413,55 +407,56 @@ main {
     max-width: 1100px;
     height: 80px;
     padding: 0px 20px;
-}
+  }
 
   #cabecalho h1 {
     margin-left: 20px;
   }
 
-  .menu-desktop {
-    display: block;
-    margin-left: auto;
-    top: 20px;
-    right: 40px;
+  #menu{
+    display: flex;
+    flex-direction: row;
   }
-
-  .menu-desktop ul {
-    list-style-type: none;
+  
+  #menu-conteiner{
+    position: relative;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
     background-color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #333333;
-    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    width: 32%;
   }
 
-  .menu-desktop ul li {
-    display: inline;
-    padding: 8px 0px;
+  #fecharMenu{
+    display: none;
   }
+
+  #menu li{
+    color: #333333;
+    padding: 10px 10px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  #menu li:hover{
+    background-color: #fff;
+  }
+  
   li:before {
     content: "|";
     color: #979797;
-    margin: 0px 20px 0px 15px;
+    margin: 0px 20px 0px -5px;
   }
   li:first-child:before {
     content: none;
   }
 
-  #espaco-menu-desktop {
-    margin-left: 0px;
-  }
 }
 
 @media (min-width: 1500px) {
   main {
     justify-content: center;
   }
-
-  #cabecalho
-
-
-
-  
-
 }
