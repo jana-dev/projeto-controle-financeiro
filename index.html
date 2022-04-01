@@ -5,95 +5,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
     <title>Controle Financeiro</title>
 </head>
 
 <body>
 
-    <header id="cabecalho">
-        <div class="conteudo-cabecalho">
+    <!--Inicio logo e menu hamburguer-->
+    <header id="cabecalho"> <!--espaço para o cabeçalho-->
+        <div class="conteudo-cabecalho"> <!--logo, titulo e menu-->
             <div class="logo">
                 <img src="./img/logo.png" alt="Logo com icones geométricos" width="30px" height="27.63">
             </div>
             <div class="titulo">
                 <h1>Controle financeiro</h1>
             </div>
-        
 
+            <!--Riscos para o ícone menu de "hamburguer"-->
             <div onclick="abrirMenu()" id="abrirMenu" class="icon-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+             <!--Riscos para o ícone menu de "hamburguer"-->
+
+            <!--caixa com o conteudo do menu--> 
             <div id="menu-conteiner">
+                <!--ícone que fecha a caixa do menu-->
                 <div id="fecharMenu" onclick="fecharMenu()">
                     <img src="./img/fecharMenu.png" alt="Icone de xís para fechar menu">
                 </div>
+                <!--conteudo do menu-->
                 <ul id="menu">
                     <li>Cadastro de transações</li>
                     <li>Limpar dados</li>
                 </ul>
             </div>
-            <div class="menu-desktop">
+            <!--caixa com o conteudo do menu--> 
+
+            <!--
+                <div class="menu-desktop">
                 <ul>
                     <li>Cadastro de transações</li>
                     <li id="espaco-menu-desktop">Limpar dados</li>
                 </ul>
             </div>
-        </div>
+            -->
             
 
-        
+        </div>
+            
     </header>
+    <!--Fim logo e menu hamburguer-->
 
+
+    <!--todo o conteudo da página-->
     <main class="conteudo-principal">
+
+        <!--contem a div contendo formulario e outra div contendo a tabela-->
         <div class="formulario-tabela">
+            <!--conteudo do formulario-->
             <section class="formulario">
+                <!--h2 somente visivel na resolução de tablet e desktop-->
                 <h2>Nova transação</h2>
                 <form>
+                    <!--select contendo o tipo de transação-->
                     <div class="transacao">
                         <label for="transacao">Tipo de transação</label>
                         <select name="transacao" id="transacao">
-                        <option value="compra">Compra</option>
-                        <option value="venda">Venda</option>
-                    </select>
+                            <option value="compra">Compra</option>
+                            <option value="venda">Venda</option>
+                        </select>
                     </div>
-
+                    <!--input para o nome da mercadoria-->
                     <div class="nome-mercadoria">
                         <label for="nomeMercadoria">Nome da mercadoria</label>
                         <input type="text" name="nomeMercadoria" id="nomeMercadoria" placeholder="Input"> 
                     </div>
-                    
-    
+                    <!--input para o valor da mercadoria-->
                     <div class="valor">
                         <label for="valor">Valor</label>
                         <input type="number" name="valor" id="valor" placeholder="R$ 0,00">
                     </div>
-                      
-                    
+                    <!--menu adicionar transação-->
                     <div class="menu-adicionar">
                         <input type="submit" value="Adicionar transação">
                     </div>
-                    
                 </form>
-        </section>
+            </section>
 
-        <div class="linha"></div>
+            <!--linha que separa o formulário para começar a tabela-->
+            <div class="linha"></div>
 
-        <section class="tabela-extrato">
-
-            <h3>Extrato de transações</h3>
-
-            <table>
+            <!--conteudo tabela com o extrato das transações-->
+            <section class="tabela-extrato">
+                <h3>Extrato de transações</h3>
+                <!--conteudo interno da tabela-->
+                <table>
+                <!--cabeçalho da tabela-->
                 <tr>
-                    <td></td>
+                    <td></td> <!--conteudo vazio paenas para alinhar a tabela-->
                     <td class="cabecalho-tabela alinhamento-esquerdo" id="tamanho-mercadoria">
                         Mercadoria
                     </td>
@@ -101,9 +119,11 @@
                         Valor
                     </td>
                 </tr>
-                <tr class="linha-simples-separadora">
+                <!--cabeçalho da tabela-->
+                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
                     <td colspan="3"></td>
                 </tr>
+                <!--primeira linha do conteudo-->
                 <tr>
                     <td class="espaco-simbolo">+</td>
                     <td class="conteudo-tabela alinhamento-esquerdo">
@@ -113,9 +133,11 @@
                         R$ 12.999,99
                     </td>
                 </tr>
-                <tr class="linha-simples-separadora">
+                <!--primeira linha do conteudo-->
+                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
                     <td colspan="3"></td>
                 </tr>
+                <!--segunda linha do conteudo-->
                 <tr>
                     <td class="espaco-simbolo">-</td>
                     <td class="conteudo-tabela alinhamento-esquerdo">
@@ -125,9 +147,11 @@
                         R$ 99,99
                     </td>
                 </tr>
-                <tr class="linha-simples-separadora">
+                <!--segunda linha do conteudo-->
+                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
                     <td colspan="3"></td>
                 </tr>
+                <!--terceira linha do conteudo-->
                 <tr>
                     <td class="espaco-simbolo">+</td>
                     <td class="conteudo-tabela alinhamento-esquerdo">
@@ -137,12 +161,14 @@
                         R$ 9,99
                     </td>
                 </tr>
-                <tr class="linha-simples-separadora">
+                <!--terceira linha do conteudo-->
+                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
                     <td colspan="3" id="espaco-linhadupla"></td>
                 </tr>
-                <tr class="linha-simples-separadora">
+                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
                     <td colspan="3" id="espaco-linhadupla"></td>
                 </tr>
+                <!--linha final com o valor total-->
                 <tr>
                     <td></td>
                     <td class="total alinhamento-esquerdo">
@@ -152,26 +178,29 @@
                         R$ 12.909,99
                     </td>
                 </tr>
+                <!--linha final com o valor total-->
+                <!--linha com a palavra lucro-->
                 <tr>
                     <td></td>
-                    <td>
-
-                    </td>
+                    <td></td>
                     <td class="lucro">
                         [LUCRO]
                     </td>
                 </tr>
-            </table>
-
-        </section>
-        <!--fim tabela extrato-->
+                <!--linha com a palavra lucro-->
+                </table>
+                <!--conteudo interno da tabela-->
+            </section>
         </div>
+        <!--contem a div contendo formulario e outra div contendo a tabela-->
 
-        
-
-        <div class="footer"></div>
+        <div class="footer"></div> <!--linha preta fina finalizando a página-->
     </main>
+    <!--todo o conteudo da página-->
 
+
+
+    <!--script para abrir e fechar o container do menu ao clicar no icone hamburguer-->
     <script>
         function abrirMenu() {
             document.getElementById("menu-conteiner").style.display = "block";
@@ -181,7 +210,5 @@
         }
     </script>
 
-
 </body>
-
 </html>
