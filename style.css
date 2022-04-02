@@ -429,6 +429,10 @@ main {
     width: 32%;
   }
 
+  #abrirMenu{
+    display: none;
+  }
+
   #fecharMenu{
     display: none;
   }

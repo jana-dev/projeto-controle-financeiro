@@ -191,12 +191,21 @@
 
     <!--script para abrir e fechar o container do menu ao clicar no icone hamburguer-->
     <script>
+        var size = screen.width
+        var menuHamburguer = getElementById("abrirMenu")
+        function fecharMenu() {
+            document.getElementById("menu-conteiner").style.display = "none";
+            
+        }
         function abrirMenu() {
             document.getElementById("menu-conteiner").style.display = "block";
         }
-        function fecharMenu() {
-            document.getElementById("menu-conteiner").style.display = "none";
+
+        if(size > 1111 && menuHamburguer.display == none){
+            document.getElementById("menu-conteiner").style.display = "flex";
         }
+        
+        
     </script>
 
 </body>
