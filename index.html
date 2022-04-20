@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -12,7 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+
     <title>Controle Financeiro</title>
 </head>
 
@@ -68,7 +71,8 @@
                     <!--select contendo o tipo de transação-->
                     <div class="transacao">
                         <label for="transacao">Tipo de transação</label>
-                        <select name="transacao" id="transacao">
+                        <select name="transacao" id="transacao" required>
+                            <option value="">Selecione</option>
                             <option value="compra">Compra</option>
                             <option value="venda">Venda</option>
                         </select>
@@ -76,12 +80,12 @@
                     <!--input para o nome da mercadoria-->
                     <div class="nome-mercadoria">
                         <label for="nomeMercadoria">Nome da mercadoria</label>
-                        <input type="text" name="nomeMercadoria" id="nomeMercadoria" placeholder="Input"> 
+                        <input type="text" name="nomeMercadoria" id="nomeMercadoria" placeholder="Input" required> 
                     </div>
                     <!--input para o valor da mercadoria-->
                     <div class="valor">
                         <label for="valor">Valor</label>
-                        <input type="number" name="valor" id="valor" placeholder="R$ 0,00">
+                        <input type="text" name="valor" id="valor" placeholder="R$ 0,00" onfocusout="validarValor()" required>
                     </div>
                     <!--menu adicionar transação-->
                     <div class="menu-adicionar">
@@ -189,24 +193,7 @@
 
 
 
-    <!--script para abrir e fechar o container do menu ao clicar no icone hamburguer-->
-    <script>
-        var size = screen.width
-        var menuHamburguer = getElementById("abrirMenu")
-        function fecharMenu() {
-            document.getElementById("menu-conteiner").style.display = "none";
-            
-        }
-        function abrirMenu() {
-            document.getElementById("menu-conteiner").style.display = "block";
-        }
-
-        if(size > 1111 && menuHamburguer.display == none){
-            document.getElementById("menu-conteiner").style.display = "flex";
-        }
-        
-        
-    </script>
+    <script src="main.js"></script>
 
 </body>
 </html>
