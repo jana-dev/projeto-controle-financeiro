@@ -101,10 +101,10 @@
             <section class="tabela-extrato">
                 <h3>Extrato de transações</h3>
                 <!--conteudo interno da tabela-->
-                <table>
+                <table class="tabela">
                 <!--cabeçalho da tabela-->
                 <tr>
-                    <td></td> <!--conteudo vazio paenas para alinhar a tabela-->
+                    <td></td> <!--conteudo vazio para alinhar a tabela-->
                     <td class="cabecalho-tabela alinhamento-esquerdo" id="tamanho-mercadoria">
                         Mercadoria
                     </td>
@@ -113,54 +113,28 @@
                     </td>
                 </tr>
                 <!--cabeçalho da tabela-->
-                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
+                <tr class="linha-simples-separadora"> <!--linha para desenhar uma borda-->
                     <td colspan="3"></td>
                 </tr>
-                <!--primeira linha do conteudo-->
+
+                <!--conteudo que virá dinamicamente-->
+                <tbody class="dinamico"></tbody>
+                <!--conteudo que virá dinamicamente-->
+
                 <tr>
-                    <td class="espaco-simbolo">+</td>
-                    <td class="conteudo-tabela alinhamento-esquerdo">
-                        Donec dictum ipsum non arcu mollis
+                    <td></td> <!--conteudo vazio  para alinhar a tabela-->
+                    <td class="alinhamento-esquerdo" colspan="2">
+                        Nenhuma transação cadastrada.
                     </td>
-                    <td class="alinhamento-direito">
-                        R$ 12.999,99
-                    </td>
-                </tr>
-                <!--primeira linha do conteudo-->
-                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
-                    <td colspan="3"></td>
-                </tr>
-                <!--segunda linha do conteudo-->
-                <tr>
-                    <td class="espaco-simbolo">-</td>
-                    <td class="conteudo-tabela alinhamento-esquerdo">
-                        Lorem ipsum dolor
-                    </td>
-                    <td class="alinhamento-direito">
-                        R$ 99,99
-                    </td>
-                </tr>
-                <!--segunda linha do conteudo-->
-                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
-                    <td colspan="3"></td>
-                </tr>
-                <!--terceira linha do conteudo-->
-                <tr>
-                    <td class="espaco-simbolo">+</td>
-                    <td class="conteudo-tabela alinhamento-esquerdo">
-                        Lorem ipsum
-                    </td>
-                    <td class="alinhamento-direito">
-                        R$ 9,99
-                    </td>
-                </tr>
-                <!--terceira linha do conteudo-->
-                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
-                    <td colspan="3" id="espaco-linhadupla"></td>
-                </tr>
-                <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
-                    <td colspan="3" id="espaco-linhadupla"></td>
-                </tr>
+                    <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
+                        <td colspan="3" id="espaco-linhadupla"></td>
+                    </tr>
+                    <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
+                        <td colspan="3" id="espaco-linhadupla"></td>
+                    </tr>
+                
+
+                
                 <!--linha final com o valor total-->
                 <tr>
                     <td></td>
@@ -168,16 +142,16 @@
                         Total
                     </td>
                     <td class="total alinhamento-direito">
-                        R$ 12.909,99
+                       
                     </td>
                 </tr>
                 <!--linha final com o valor total-->
-                <!--linha com a palavra lucro-->
+                <!--linha com lucro ou preju-->
                 <tr>
                     <td></td>
                     <td></td>
                     <td class="lucro">
-                        [LUCRO]
+                        
                     </td>
                 </tr>
                 <!--linha com a palavra lucro-->
