@@ -1,4 +1,3 @@
-
 /*Função para abrir e fechar o menu mobile*/
 var size = screen.width;
 function fecharMenu() {
@@ -8,86 +7,74 @@ function abrirMenu() {
   document.getElementById("menu-conteiner").style.display = "block";
 }
 
-
 /* Mascara de moeda para o input valor do formulário */
-$(document).ready(function (){
-  $('#valor').maskMoney({
-    prefix:'R$ ',
+$(document).ready(function () {
+  $("#valor").maskMoney({
+    prefix: "R$ ",
     allowNegative: true,
-    thousands:'.', decimal:',',
-    affixesStay:true});
-    
+    thousands: ".",
+    decimal: ",",
+    affixesStay: true,
+  });
 });
 
 /* Validação do campo valor*/
-function validarValor(){
-  var validacao = document.getElementById('valor').value;
-  if(validacao == ""){
+function validarValor() {
+  var validacao = document.getElementById("valor").value;
+  if (validacao == "") {
     alert("Digite um valor");
-  } 
+  }
 }
 
-// função para armazenar o conteudo do extrato dinamicamente na tabela, ainda em andamento
+// Armazenar no LocalStorage
 
-function desenhaTabela(){
+var transacao = [];
+function cadastrar(e) {
+  e.preventDefault();
+  console.log("clicou no adicionar transacao");
 
-  var extrato = [
-    {
-      tipo: 'Compra',
-      nome: 'Bicicleta',
-      valor: 'R$ 2.500,00'
-    },
-    {
-      tipo: 'Compra',
-      nome: 'Moto',
-      valor: 'R$ 30.000,00'
-    },
-    {
-      tipo: 'Venda',
-      nome: 'Cama',
-      valor: 'R$ 1.500,00'
-    }
-  ];
+  var tipo = document.getElementById("transacao").value;
+  var nome = document.getElementById("nomeMercadoria").value;
+  var valor = document.getElementById("valor").value;
 
+  var transacao = JSON.parse(localStorage.getItem("transacao") || "[]");
 
-  for (transacao in extrato){
-      document.querySelector('table.tabela tbody').innerHTML += 
+  transacao.push({
+    tipo: tipo,
+    nome: nome,
+    valor: valor,
+  });
+
+  localStorage.setItem("transacao", JSON.stringify(transacao));
+  console.log({ transacao });
+  desenhaTabela();
+}
+
+function desenhaTabela() {
+
+  transacao = JSON.parse(localStorage.getItem('transacao'));
+  if(transacao != null){
+    document.querySelector("#dinamico").innerHTML = transacao.map((item) => {
+      return(
         `<tr class="conteudo-dinamico">
         <td class="espaco-simbolo">
-        ${extrato[transacao].tipo ? '+' : '-'}
+        ${item.tipo == "venda" ? "+" : "-"}
         </td>
         <td class="conteudo-tabela alinhamento-esquerdo">
-          ${extrato[transacao].nome}
+          ${item.nome}
         </td>
         <td class="alinhamento-direito">
-          ${extrato[transacao].valor}
+          ${item.valor}
         </td>
       </tr>
-      <tr class="linha-simples-separadora conteudo-dinamico"> <!--linha apenas para desenhar uma borda-->
+      <tr class="linha-simples-separadora conteudo-dinamico"> 
         <td colspan="3"></td>
       </tr>`
-      
+      )
+    }).join('')
   }
 
 }
 
-desenhaTabela();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+desenhaTabela()
 

@@ -67,7 +67,7 @@
             <section class="formulario">
                 <!--h2 somente visivel na resolução de tablet e desktop-->
                 <h2>Nova transação</h2>
-                <form>
+                <form onsubmit="cadastrar(event)">
                     <!--select contendo o tipo de transação-->
                     <div class="transacao">
                         <label for="transacao">Tipo de transação</label>
@@ -80,16 +80,16 @@
                     <!--input para o nome da mercadoria-->
                     <div class="nome-mercadoria">
                         <label for="nomeMercadoria">Nome da mercadoria</label>
-                        <input type="text" name="nomeMercadoria" id="nomeMercadoria" placeholder="Input" required> 
+                        <input type="text" name="nomeMercadoria" id="nomeMercadoria" placeholder="Mercadoria" required> 
                     </div>
                     <!--input para o valor da mercadoria-->
                     <div class="valor">
                         <label for="valor">Valor</label>
                         <input type="text" name="valor" id="valor" placeholder="R$ 0,00" onfocusout="validarValor()" required>
                     </div>
-                    <!--menu adicionar transação-->
+                    <!--bt adicionar transação-->
                     <div class="menu-adicionar">
-                        <input type="submit" value="Adicionar transação">
+                        <input type="submit" onclick="cadastrar()" value="Adicionar transação">
                     </div>
                 </form>
             </section>
@@ -118,7 +118,7 @@
                 </tr>
 
                 <!--conteudo que virá dinamicamente-->
-                <tbody class="dinamico"></tbody>
+                <tbody class="dinamico" id="dinamico"></tbody>
                 <!--conteudo que virá dinamicamente-->
 
                 <tr>
