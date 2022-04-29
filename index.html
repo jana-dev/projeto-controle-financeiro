@@ -1,173 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-    <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js"
+      type="text/javascript"
+    ></script>
 
     <title>Controle Financeiro</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--Inicio logo e menu hamburguer-->
-    <header id="cabecalho"> <!--espaço para o cabeçalho-->
-        <div class="conteudo-cabecalho"> <!--logo, titulo e menu-->
-            <div class="logo">
-                <img src="./img/logo.png" alt="Logo com icones geométricos" width="30px" height="27.63">
-            </div>
-            <div class="titulo">
-                <h1>Controle financeiro</h1>
-            </div>
-
-            <!--Riscos para o ícone menu de "hamburguer"-->
-            <div onclick="abrirMenu()" id="abrirMenu" class="icon-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-             <!--Riscos para o ícone menu de "hamburguer"-->
-
-            <!--caixa com o conteudo do menu--> 
-            <div id="menu-conteiner">
-                <!--ícone que fecha a caixa do menu-->
-                <div id="fecharMenu" onclick="fecharMenu()">
-                    <img src="./img/fecharMenu.png" alt="Icone de xís para fechar menu">
-                </div>
-                <!--conteudo do menu-->
-                <ul id="menu">
-                    <li>Cadastro de transações</li>
-                    <li>Limpar dados</li>
-                </ul>
-            </div>
-            <!--caixa com o conteudo do menu--> 
+    <header id="cabecalho">
+      <!--espaço para o cabeçalho-->
+      <div class="conteudo-cabecalho">
+        <!--logo, titulo e menu-->
+        <div class="logo">
+          <img
+            src="./img/logo.png"
+            alt="Logo com icones geométricos"
+            width="30px"
+            height="27.63"
+          />
         </div>
-            
+        <div class="titulo">
+          <h1>Controle financeiro</h1>
+        </div>
+
+        <!--Riscos para o ícone menu de "hamburguer"-->
+        <div onclick="abrirMenu()" id="abrirMenu" class="icon-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!--Riscos para o ícone menu de "hamburguer"-->
+
+        <!--caixa com o conteudo do menu-->
+        <div id="menu-conteiner">
+          <!--ícone que fecha a caixa do menu-->
+          <div id="fecharMenu" onclick="fecharMenu()">
+            <img
+              src="./img/fecharMenu.png"
+              alt="Icone de xís para fechar menu"
+            />
+          </div>
+          <!--conteudo do menu-->
+          <ul id="menu">
+            <li onclick="cadastrar(event)">Cadastro de transações</li>
+            <li onclick="deletarTransacoes()">Limpar dados</li>
+          </ul>
+        </div>
+        <!--caixa com o conteudo do menu-->
+      </div>
     </header>
     <!--Fim logo e menu hamburguer-->
 
-
     <!--todo o conteudo da página-->
     <main class="conteudo-principal">
+      <!--contem a div contendo formulario e outra div contendo a tabela-->
+      <div class="formulario-tabela">
+        <!--conteudo do formulario-->
+        <section class="formulario">
+          <!--h2 somente visivel na resolução de tablet e desktop-->
+          <h2>Nova transação</h2>
+          <form onsubmit="cadastrar(event)">
+            <!--select contendo o tipo de transação-->
+            <div class="transacao">
+              <label for="transacao">Tipo de transação</label>
+              <select name="transacao" id="transacao" required>
+                <option value="">Selecione</option>
+                <option value="compra">Compra</option>
+                <option value="venda">Venda</option>
+              </select>
+            </div>
+            <!--input para o nome da mercadoria-->
+            <div class="nome-mercadoria">
+              <label for="nomeMercadoria">Nome da mercadoria</label>
+              <input
+                type="text"
+                name="nomeMercadoria"
+                id="nomeMercadoria"
+                placeholder="Mercadoria"
+                required
+              />
+            </div>
+            <!--input para o valor da mercadoria-->
+            <div class="valor">
+              <label for="valor">Valor</label>
+              <input
+                type="text"
+                name="valor"
+                id="valor"
+                placeholder="R$ 0,00"
+                onfocusout="validarValor()"
+                required
+              />
+            </div>
+            <!--bt adicionar transação-->
+            <div class="menu-adicionar">
+              <input type="submit" value="Adicionar transação" />
+            </div>
+          </form>
+        </section>
 
-        <!--contem a div contendo formulario e outra div contendo a tabela-->
-        <div class="formulario-tabela">
-            <!--conteudo do formulario-->
-            <section class="formulario">
-                <!--h2 somente visivel na resolução de tablet e desktop-->
-                <h2>Nova transação</h2>
-                <form onsubmit="cadastrar(event)">
-                    <!--select contendo o tipo de transação-->
-                    <div class="transacao">
-                        <label for="transacao">Tipo de transação</label>
-                        <select name="transacao" id="transacao" required>
-                            <option value="">Selecione</option>
-                            <option value="compra">Compra</option>
-                            <option value="venda">Venda</option>
-                        </select>
-                    </div>
-                    <!--input para o nome da mercadoria-->
-                    <div class="nome-mercadoria">
-                        <label for="nomeMercadoria">Nome da mercadoria</label>
-                        <input type="text" name="nomeMercadoria" id="nomeMercadoria" placeholder="Mercadoria" required> 
-                    </div>
-                    <!--input para o valor da mercadoria-->
-                    <div class="valor">
-                        <label for="valor">Valor</label>
-                        <input type="text" name="valor" id="valor" placeholder="R$ 0,00" onfocusout="validarValor()" required>
-                    </div>
-                    <!--bt adicionar transação-->
-                    <div class="menu-adicionar">
-                        <input type="submit" onclick="cadastrar()" value="Adicionar transação">
-                    </div>
-                </form>
-            </section>
+        <!--linha que separa o formulário para começar a tabela-->
+        <div class="linha"></div>
 
-            <!--linha que separa o formulário para começar a tabela-->
-            <div class="linha"></div>
+        <!--conteudo tabela com o extrato das transações-->
+        <section class="tabela-extrato">
+          <h3>Extrato de transações</h3>
+          <!--conteudo interno da tabela-->
+          <table class="tabela">
+            <!--cabeçalho da tabela-->
+            <tr>
+              <td></td>
+              <!--conteudo vazio para alinhar a tabela-->
+              <td
+                class="cabecalho-tabela alinhamento-esquerdo"
+                id="tamanho-mercadoria"
+              >
+                Mercadoria
+              </td>
+              <td
+                class="cabecalho-tabela alinhamento-direito"
+                id="cabecalho-tabela-valor"
+              >
+                Valor
+              </td>
+            </tr>
+            <!--cabeçalho da tabela-->
+            <tr class="linha-simples-separadora">
+              <!--linha para desenhar uma borda-->
+              <td colspan="3"></td>
+            </tr>
 
-            <!--conteudo tabela com o extrato das transações-->
-            <section class="tabela-extrato">
-                <h3>Extrato de transações</h3>
-                <!--conteudo interno da tabela-->
-                <table class="tabela">
-                <!--cabeçalho da tabela-->
-                <tr>
-                    <td></td> <!--conteudo vazio para alinhar a tabela-->
-                    <td class="cabecalho-tabela alinhamento-esquerdo" id="tamanho-mercadoria">
-                        Mercadoria
-                    </td>
-                    <td class="cabecalho-tabela alinhamento-direito" id="cabecalho-tabela-valor">
-                        Valor
-                    </td>
-                </tr>
-                <!--cabeçalho da tabela-->
-                <tr class="linha-simples-separadora"> <!--linha para desenhar uma borda-->
-                    <td colspan="3"></td>
-                </tr>
+            <!--conteudo que virá dinamicamente-->
+            <tbody class="dinamico" id="dinamico"></tbody>
+            <!--conteudo que virá dinamicamente-->
 
-                <!--conteudo que virá dinamicamente-->
-                <tbody class="dinamico" id="dinamico"></tbody>
-                <!--conteudo que virá dinamicamente-->
+            <tr>
+              <td></td>
+              <!--conteudo vazio  para alinhar a tabela-->
+              <td
+                class="alinhamento-esquerdo"
+                id="nenhumaCadastrada"
+                colspan="2"
+              >
+                Nenhuma transação cadastrada.
+              </td>
+            </tr>
 
-                <tr>
-                    <td></td> <!--conteudo vazio  para alinhar a tabela-->
-                    <td class="alinhamento-esquerdo" colspan="2">
-                        Nenhuma transação cadastrada.
-                    </td>
-                    <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
-                        <td colspan="3" id="espaco-linhadupla"></td>
-                    </tr>
-                    <tr class="linha-simples-separadora"> <!--linha apenas para desenhar uma borda-->
-                        <td colspan="3" id="espaco-linhadupla"></td>
-                    </tr>
-                
+            <tr class="linha-simples-separadora">
+              <!--linha apenas para desenhar uma borda-->
+              <td colspan="3" id="espaco-linhadupla"></td>
+            </tr>
+            <tr class="linha-simples-separadora">
+              <!--linha apenas para desenhar uma borda-->
+              <td colspan="3" id="espaco-linhadupla"></td>
+            </tr>
 
-                
-                <!--linha final com o valor total-->
-                <tr>
-                    <td></td>
-                    <td class="total alinhamento-esquerdo">
-                        Total
-                    </td>
-                    <td class="total alinhamento-direito">
-                       
-                    </td>
-                </tr>
-                <!--linha final com o valor total-->
-                <!--linha com lucro ou preju-->
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td class="lucro">
-                        
-                    </td>
-                </tr>
-                <!--linha com a palavra lucro-->
-                </table>
-                <!--conteudo interno da tabela-->
-            </section>
-        </div>
-        <!--contem a div contendo formulario e outra div contendo a tabela-->
+            <!--linha final com o valor total-->
+            <tr>
+              <td></td>
+              <td class="total alinhamento-esquerdo">Total</td>
+              <td class="total alinhamento-direito" id="resultTotal"></td>
+            </tr>
+            <!--linha final com o valor total-->
+            <!--linha com lucro ou preju-->
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="lucro" id="lucro"></td>
+            </tr>
+            <!--linha com a palavra lucro-->
+          </table>
+          <!--conteudo interno da tabela-->
+        </section>
+      </div>
+      <!--contem a div contendo formulario e outra div contendo a tabela-->
 
-        <div class="footer"></div> <!--linha preta fina finalizando a página-->
+      <div class="footer"></div>
+      <!--linha preta fina finalizando a página-->
     </main>
     <!--todo o conteudo da página-->
 
-
-
     <script src="main.js"></script>
-
-</body>
+  </body>
 </html>

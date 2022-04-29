@@ -26,8 +26,7 @@ function validarValor() {
   }
 }
 
-// Armazenar no LocalStorage
-
+// Armazena no LocalStorage
 var transacao = [];
 function cadastrar(e) {
   e.preventDefault();
@@ -48,8 +47,10 @@ function cadastrar(e) {
   localStorage.setItem("transacao", JSON.stringify(transacao));
   console.log({ transacao });
   desenhaTabela();
+  location.reload();
 }
 
+// Desenha as linhas das transações na tabela pegando a chave do localStorage
 function desenhaTabela() {
 
   transacao = JSON.parse(localStorage.getItem('transacao'));
@@ -72,9 +73,91 @@ function desenhaTabela() {
       </tr>`
       )
     }).join('')
+    listarTotal()
+    if(transacao != null){
+      document.getElementById('espaco-linhadupla').style.display = "none";
+      document.getElementById('nenhumaCadastrada').style.display = "none";
+    }
   }
-
 }
 
 desenhaTabela()
+
+
+// função para deletar todas as transações do localstorage
+function deletarTransacoes(){
+  confirmar = confirm("Tem certeza que deseja excluir todos os registros armazenados?")
+  if(confirmar == true){
+    localStorage.clear('transacao')
+    alert("Registros excluídos")
+    location.reload()
+  }else{
+    alert("Registros mantidos")
+  }
+  desenhaTabela()
+}
+
+
+// função que realiza o cálculo dos valores inseridos no form
+
+var total = 0
+function calculoValores() {
+    let transacao = JSON.parse(localStorage.getItem('transacao'))
+    let totalStrVenda = []
+    let totalStrCompra = []
+    let totalNbrVenda = []
+    let totalNbrCompra = []
+    let totalVenda = 0
+    let totalCompra = 0
+    let i = 0
+    let j = 0
+    if (transacao != null) {
+        for (; i < transacao.length; i++) {
+            if (transacao[i].tipo == "compra") {
+                totalStrCompra = [transacao[i].valor.replace(/\D/g, '')]
+                totalNbrCompra = Number.parseFloat(totalStrCompra)
+                totalCompra += totalNbrCompra
+            }
+        }
+        for (; j < transacao.length; j++) {
+            if (transacao[j].tipo == "venda") {
+                totalStrVenda = [transacao[j].valor.replace(/\D/g, '')]
+                totalNbrVenda = Number.parseFloat(totalStrVenda)
+                totalVenda += totalNbrVenda
+            }
+        }
+        total = totalVenda - totalCompra
+    }
+}
+
+/*Função que lista na tela se o valor apresentado é de lucro ou de prejuízo, baseado no valor da variável 'total'*/
+function listarTotal() {
+  calculoValores()
+  formatarMoeda()
+  var campoTotal = document.getElementById('resultTotal')
+  resultTotal.innerHTML = "R$ " + totalFormatado;
+
+  if (total > 0) {
+      lucro.innerHTML = "[LUCRO]"
+  }
+  else if (total < 0) {
+      lucro.innerHTML = "[PREJUIZO]"
+  }
+  else {
+      lucro.innerHTML = ""
+  }
+}
+
+function formatarMoeda() {
+  totalFormatado = total
+  totalFormatado = totalFormatado + '';
+  totalFormatado = parseInt(totalFormatado.replace(/[\D]+/g, ''));
+  totalFormatado = totalFormatado + '';
+  totalFormatado = totalFormatado.replace(/([0-9]{2})$/g, ",$1");
+
+  if (totalFormatado.length > 6) {
+      totalFormatado = totalFormatado.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+  }
+}
+
 
