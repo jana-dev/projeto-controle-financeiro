@@ -113,7 +113,9 @@
                 name="valor"
                 id="valor"
                 placeholder="R$ 0,00"
-                onfocusout="validarValor()"
+                onfocusout="validarValor(event)"
+                onpaste="validarValor(event)" 
+                ondrop="validarValor(event)"
                 required
               />
             </div>
